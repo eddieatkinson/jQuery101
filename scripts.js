@@ -83,6 +83,52 @@ $(document).ready(function(){ // EVERYTHING will go in here!
 			$('#thing').removeClass('btn-danger');
 		}else if(whatToDo == 'toggle-class'){
 			$('#thing').toggleClass('btn-danger');
+		}else if(whatToDo == 'prepend'){
+			// prepend is the same as innerHTML = ... + innerHTML
+			$('#thing').prepend('This is some prepended text.');
+		}else if(whatToDo == 'append'){
+			// append is the same as innerHTML += ...
+			$('#thing').append('This is some appended text.');
+		}else if(whatToDo == 'fade-toggle'){
+			// takes ms as argument
+			$('#thing').fadeToggle(1500);
+		}else if(whatToDo == 'slide-toggle'){
+			// takes ms as argument
+			$('#thing').slideToggle(1500);
+		}else if(whatToDo == 'animate'){
+			// Animate takes 2 args:
+			// 1. an object of css properties to animate to
+			// 2. how long you want it to animate over (in ms)
+			$('#thing').animate({
+				'width': '40%',
+				'opacity': .3,
+				'font-size': '100%',
+				'border-width': '10px'
+			}, 1500);
+		}else if(whatToDo == 'goodbye'){
+			$('#thing').animate({
+				'margin-left': '-3000px'
+			}, 1500);
+		}else if(whatToDo == 'hello'){
+			$('#thing').animate({
+				'margin': '0px'
+			}, 1500);
+		}else if(whatToDo == 'loop'){
+			$('button').each(function(){
+				console.log(this);
+			})
+		}else if(whatToDo == 'closest'){
+			$('#thing').closest('.row').css({
+				'background-color': 'orange'
+			});
+		}else if(whatToDo == 'parent'){
+			$('#thing').parent().css({
+				'background-color': 'red'
+			});
+		}else if(whatToDo == 'explode'){
+			$('#thing').toggle('explode', {pieces:100}, 4000);
+		}else if(whatToDo == 'bounce'){
+			$('#thing').toggle('bounce');
 		}
 	})
 
